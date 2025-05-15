@@ -5,15 +5,19 @@ Impariamo a modellare la struttura dei nostri database grazie alle Migrations!
 Creiamo una tabella trains e relativa Migration, cercando di capire la natura dei campi necessari. 
 
 Ogni treno dovrà avere:
-- Azienda
-- Stazione di partenza
-- Stazione di arrivo
-- Orario di partenza
-- Orario di arrivo
-- Codice Treno
-- Totale Carrozze
-- Se in orario o meno
-- Se cancellato o meno
+- id                        |-> id()
+- Data                      |-> date (date)
+- Azienda                   |-> company (varchar, 200)
+- Tipo treno                |-> train_type (varchar, 50)
+- Stazione di partenza      |-> departure_station (varchar, 60)
+- Stazione di arrivo        |-> arrival_station (varchar, 60)
+- Orario di partenza        |-> departure_time (time, not_nullable)
+- Orario di arrivo          |-> arrival_time (time, not_nullable)
+- Codice Treno              |-> train_number (varchar, 5)
+- Totale Carrozze           |-> total_carriages (number, 2)
+- Se in orario o meno       |-> is_on_time (boolean, not_nullable)
+- Ritardo                   |-> delay_minutes(TINYINT, nullable)
+- Se cancellato o meno      |-> is_cancelled (boolean, not_nullable)
 
 È probabile che siano necessarie altre colonne per far funzionare la tabella nel modo corretto 😉
 Inventiamo dei dati fittizi e inseriamoli tramite PhpMyAdmin.
