@@ -1,16 +1,17 @@
 @php
-    $state= 'partenza'
+    $state= 'arrivo'
 @endphp
 
 @extends('layouts.default_layout')
 @section('page_title')
-    Treni In Partenza
+    Treni In Arrivo
 @endsection
 
 @section('content')
 <header>
     {{-- titolo partenze --}}   
-    <h1>Treni in partenza / Departure trains</h1><span><a class="btn btn-outline-warning btn-custom" href="/">ritorna alla home</a></span>
+    <h1>Treni in Arrivo / Arrival Trains</h1> <span><a class="btn btn-outline-warning btn-custom" href="/">ritorna alla home</a></span>
+    
 </header>
 
 <main>
@@ -18,13 +19,13 @@
          {{-- riga titoli --}}
         <div class="row title">
             <div class="col">
-                treno
+                treno/train
             </div>
             <div class="col">
-                tipo
+                tipo/type
             </div>
             <div class="col">
-                codice 
+                codice/Train Code
             </div>
             <div class="col">
                 {{$state == 'partenza'?'destinazione':($state == 'arrivo'?'Proveniente da':'')}}
@@ -33,13 +34,13 @@
                 {{$state == 'partenza'?'Orario di partenza':($state == 'arrivo'?'Orario di arrivo':'')}}
             </div>
             <div class="col">
-                ritardo
+                ritardo/delay
             </div>
             <div class="col">
-                informazioni
+                informazioni/informations
             </div>
             <div class="col">
-                binario platform
+                binario/platform
             </div>
         </div>
 
@@ -64,5 +65,3 @@
    
 
 @endsection
-
-
