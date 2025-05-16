@@ -1,8 +1,15 @@
+:root {
+    background-color: #110c0a;
+
+}
+
 * {
     font-family: "Share Tech Mono", monospace;
     font-weight: 400;
     font-style: normal;
     color: #967e48;
+    background-color: #110c0a;
+
 }
 
 header {
@@ -69,4 +76,36 @@ main {
     100% {
         transform: translateX(-100%)
     }
+}
+
+.header-title h1 {
+    color: #967e48;
+    font-family: 'Share Tech Mono', monospace;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    /* display-4 is about this size */
+}
+
+.box-home {
+    background-color: #110c0a;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.btn-custom {
+    font-family: 'Share Tech Mono', monospace;
+    font-weight: 400;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: #967e48 !important;
+    border-color: #967e48 !important;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-custom:hover,
+.btn-custom:focus {
+    background-color: #967e48 !important;
+    color: #110c0a !important;
+    text-decoration: none;
 }
