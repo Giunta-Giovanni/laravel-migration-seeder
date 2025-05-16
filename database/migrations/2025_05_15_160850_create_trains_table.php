@@ -20,6 +20,7 @@ return new class extends Migration
             $table->time('departure_time');
             $table->time('arrival_time')->nullable(); // può non essere noto
             $table->string('train_number', 5);
+            $table->unsignedTinyInteger('platform')->nullable(); // se non si sa ancora
             $table->boolean('is_on_time')->nullable(); // se non si sa ancora
             $table->unsignedTinyInteger('delay_minutes')->nullable();
             $table->boolean('is_cancelled')->default(false);

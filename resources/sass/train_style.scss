@@ -1,0 +1,72 @@
+* {
+    font-family: "Share Tech Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    color: #967e48;
+}
+
+header {
+    // stile e dimensioni
+    padding: 1rem;
+    background-color: #110c0a;
+
+    // testo
+    text-align: center;
+    text-transform: uppercase;
+}
+
+main {
+    background-color: #110c0a;
+}
+
+.train-box {
+    // stile e dimensioni
+    padding: 1rem;
+}
+
+.train-box .title {
+    // stile e dimensioni
+    align-items: center;
+    border: 3px solid #201713;
+    padding: 1rem 0;
+
+    // testo
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.train-box .train {
+    align-items: center;
+    border: 1px solid #201713;
+}
+
+.train-box .train p {
+    text-transform: capitalize;
+
+}
+
+.train-box .train .col {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+    height: 3rem;
+    overflow: hidden;
+}
+
+.train-box .scrolling-text {
+    white-space: nowrap;
+    min-width: 100%;
+    position: relative;
+    animation: scroll-left 8s linear infinite;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%)
+    }
+}
