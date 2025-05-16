@@ -17,7 +17,7 @@
 
     {{-- nome treno --}}    
     <div class="col">
-        <p>
+        <p class="scrolling-text">
             {{$company}}
         </p>
     </div>

@@ -6,6 +6,10 @@ use App\Models\Train;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+// import Faker generator
+use Faker\Factory as Faker;
+use Carbon\Carbon;
+
 class TrainTableSeeder extends Seeder
 {
     /**
@@ -13,22 +17,30 @@ class TrainTableSeeder extends Seeder
      */
     public function run(): void
     {
+        $faker = Faker::create(); // crea l'istanza Faker
+
         //questo codice verra eseguito ogni volta che langiamo questo seeder
-        $newTrain = new Train();
+        for ($i = 0; $i < 10; $i++) {
+            // salvo le variabili
+            $today_date = Carbon::today()->toDateString();
+            $is_on_time = $faker->boolean();
 
-        $newTrain->date = '2025-05-15';
-        $newTrain->company = 'siciliana';
-        $newTrain->train_type = 'Regionale';
-        $newTrain->departure_station = 'Torino';
-        $newTrain->arrival_station = 'Roma';
-        $newTrain->departure_time = '02:05';
-        $newTrain->arrival_time =  '10:05';
-        $newTrain->train_number = 'XS292';
-        $newTrain->platform = 12;
-        $newTrain->is_on_time = 1;
-        $newTrain->delay_minutes = 0;
-        $newTrain->is_cancelled = 0;
+            $newTrain = new Train();
 
-        $newTrain->save();
+            $newTrain->date = $today_date;
+            $newTrain->company = $faker->company();
+            $newTrain->train_type = 'Regionale';
+            $newTrain->departure_station = $faker->city();
+            $newTrain->arrival_station = $faker->city();
+            $newTrain->departure_time = $faker->time();
+            $newTrain->arrival_time =  $faker->time();
+            $newTrain->train_number = $faker->bothify('??###');
+            $newTrain->platform = $faker->numberBetween(0, 20);
+            $newTrain->is_on_time = $is_on_time;
+            $newTrain->delay_minutes = $is_on_time ? 0 : $faker->numberBetween(5, 120); // ritardo solo se in ritardo
+            $newTrain->is_cancelled = $faker->boolean();
+
+            $newTrain->save();
+        }
     }
 }

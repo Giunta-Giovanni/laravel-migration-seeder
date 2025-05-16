@@ -1,7 +1,7 @@
 # Descrizione
 Impariamo a modellare la struttura dei nostri database grazie alle Migrations!
 
-# MIlestone 1
+# MIlestone 1√
 1. creiamo un DB e chiamiamolo train <train_db>
 2. inseriamo i dati .env per stabilire una connessione con il DB
 3. Creiamo una tabella trains e relativa Migration, cercando di capire la natura dei campi necessari. 
@@ -24,8 +24,14 @@ Ogni treno dovrà avere:
 È probabile che siano necessarie altre colonne per far funzionare la tabella nel modo corretto√
 Inventiamo dei dati fittizi e inseriamoli tramite PhpMyAdmin.√
 
-# Milestone 2
+# Milestone 2√
 Creiamo un Model per i treni ed un relativo Controller per poi mostrare nella home page tutti i treni che sono in partenza dalla data odierna in avanti, in ordine cronologico.√
+
+# Milestone 3√ 
+Creiamo un seeder e inseriamo dei dati tramite quello√
+
+# Milestone 4√
+Creiamo un faker da inserire dentro al seeder√
 
 # Bonus 
 Con un po' di fantasia inventiamo lo stile del nostro tabellone treni! 
