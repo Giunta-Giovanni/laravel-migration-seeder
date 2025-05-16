@@ -15,11 +15,11 @@ class TrainController extends Controller
     {
         //settiamo una variabile con la data odierna 
         $today = Carbon::today();
-        $trains = Train::where('date', '>=', $today)
+        // dd($today);
+        $trains = Train::where('date', '>=', '2025-05-15') //for test use 2025-05-16 else use $today
             ->orderBy('date', 'asc')
             ->orderBy('departure_time', 'asc')
             ->get();
-        dd($trains);
-        // return view('home');
+        return view('departureTrains', compact('trains'));
     }
 }
