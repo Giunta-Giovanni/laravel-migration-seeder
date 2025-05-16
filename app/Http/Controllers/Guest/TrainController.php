@@ -21,7 +21,7 @@ class TrainController extends Controller
         //settiamo una variabile con la data odierna 
         $today = Carbon::today();
         // dd($today);
-        $trains = Train::where('date', '>=', '2025-05-15') //for test use 2025-05-16 else use $today
+        $trains = Train::where('date', '>=', $today) //for test use 2025-05-16 else use $today
             ->orderBy('date', 'asc')
             ->orderBy('departure_time', 'asc')
             ->get();
@@ -32,7 +32,7 @@ class TrainController extends Controller
         //settiamo una variabile con la data odierna 
         $today = Carbon::today();
         // dd($today);
-        $trains = Train::where('date', '>=', '2025-05-15') //for test use 2025-05-16 else use $today
+        $trains = Train::where('date', '>=', $today) //for test use 2025-05-16 else use $today
             ->orderBy('date', 'asc')
             ->orderBy('arrival_time', 'asc')
             ->get();
